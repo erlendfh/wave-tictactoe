@@ -1,0 +1,25 @@
+body {
+	font-family: calibri, trebuchet ms, arial, sans serif;
+	padding: 0 20px;
+}
+
+p {
+  font-size: large;
+}
+
+.debug {
+  font-size: small;
+  color: grey; 
+}
+
+.info { 
+  color: green; 
+}
+
+.warn { 
+  color: orange; 
+}
+
+.error { 
+  color: red; 
+}

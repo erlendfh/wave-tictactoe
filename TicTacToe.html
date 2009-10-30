@@ -1,0 +1,61 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Tic Tac Toe (on WaveMock)</title>
+        <link rel="stylesheet" type="text/css" href="src/test/javascript/styles/gold.css" />
+        <script type="text/javascript" src="src/main/javascript/tictactoe/TicTacToeClient.js"></script>
+        <script type="text/javascript" src="src/main/javascript/tictactoe/TicTacToeWaveAdapter.js"></script>
+        <script type="text/javascript" src="src/main/javascript/tictactoe/TicTacToeView.js"></script>
+        <script type="text/javascript" src="src/test/javascript/scripts/waveMock/WaveMock.js"></script>
+        <script type="text/javascript" src="src/test/javascript/scripts/waveMock/WaveState.js"></script>
+        <script type="text/javascript" src="src/test/javascript/scripts/waveMock/WaveViewer.js"></script>
+        <script type="text/javascript" src="src/test/javascript/scripts/waveMock/WaveClient.js"></script>
+    </head>
+    <body>
+        <h1>Tic Tac Toe (on WaveMock)</h1>
+
+        <style type="text/css" media="screen">
+            #view1, #view2 {
+                width: 300px;
+                height: 300px;
+                margin: 40px;
+                float: left;
+            }
+
+            .cell {
+                float: left;
+                width: 98px;
+                height: 98px;
+                font-size: 90px;
+                text-align: center;
+                border: 1px solid black;
+            }
+        </style>
+
+        <div id="view1"></div>
+
+        <div id="view2"></div>
+
+
+    <script type="text/javascript">
+        var waveMock = new WaveMock();
+
+        var viewer1 = new WaveViewer("test1@test.com", "Viewer 1", "");
+        var viewer2 = new WaveViewer("test2@test.com", "Viewer 2", "");
+
+        var wave1 = waveMock.newWaveClient(viewer1);
+        var wave2 = waveMock.newWaveClient(viewer2);
+
+        var client1 = new TicTacToeClient();
+        var client2 = new TicTacToeClient();
+
+        var adapter1 = new TicTacToeWaveAdapter(wave1, client1);
+        var adapter2 = new TicTacToeWaveAdapter(wave2, client2);
+
+        var view1 = new TicTacToeView("view1", client1);
+        var view2 = new TicTacToeView("view2", client2);
+
+    </script>
+    </body>
+</html>

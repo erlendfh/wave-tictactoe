@@ -1,0 +1,8 @@
+<project xmlns:jsl="antlib:com.googlecode.jslint4java">
+  <target name="jslint">
+    <jsl:jslint options="evil">
+      <formatter type="plain" />
+      <fileset dir="${root}/scripts" includes="**/*.js" />
+    </jsl:jslint>
+  </target>
+</project>
